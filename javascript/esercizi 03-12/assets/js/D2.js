@@ -122,7 +122,13 @@ console.log("*******************");
 */
 console.log("ESERCIZIO 8");
 let valore = true;
-console.log(typeof valore);
+if(typeof valore === "number") {
+  console.log("Ho un numero")
+} else if(typeof valore === "string") {
+  console.log("Ho un stringa")
+} else if(typeof valore === "boolean") {
+  console.log("Ho un valore booleano")
+}
 console.log("*******************");
 
 /* ESERCIZIO 9
@@ -151,15 +157,15 @@ console.log("*******************");
     }     
 */
 console.log("ESERCIZIO 10");
-let val = 5;
+let val = 7;
 if (val < 10) {
   console.log("Meno di 10");
 }
-if (val < 6) {
-  console.log("Meno di 5");
+if (val < 8) {
+  console.log("Meno di 8");
 }
-if(val >= 5) {
-  console.log("Uguale a 5 o maggiore");
+if(val >= 7) {
+  console.log("Uguale a 7 o maggiore");
 };
 console.log("*******************");
 /* ESERCIZIO 11
