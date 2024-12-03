@@ -2,15 +2,15 @@
  Scrivi un algoritmo per trovare il più grande tra due numeri interi.
 */
 console.log("ESERCIZIO 1")
-let num1 = 10;
-let num2 = 15;
-console.log(num1);
-console.log(num2);
+let num1 = 20;
+let num2 = 20;
 if (num1 > num2) {
-  console.log("Il valore più grande è il num1")
+  console.log("Il valore più grande è " + num1)
+} else if(num2 > num1) {
+  console.log("Il valore più grande è " + num2)
 } else {
-  console.log("Il valore più grande è il num2")
-};
+  console.log("I due numeri sono uguali")
+}
 console.log("*******************");
 
 /* ESERCIZIO 2
@@ -18,11 +18,10 @@ console.log("*******************");
 */
 console.log("ESERCIZIO 2");
 let num3 = 7;
-console.log(num3);
-if (num3 != 5) {
-  console.log("not equal")
+if (num3 !== 5) {
+  console.log("not equal a 5")
 };
-
+console.log("*******************");
 
 /* ESERCIZIO 3
   Scrivi un algoritmo che mostri "divisibile per 5" in console se un numero fornito è perfettamente divisibile per 5 (suggerimento: usa l'operatore modulo)
@@ -30,7 +29,6 @@ if (num3 != 5) {
 console.log("ESERCIZIO 3");
 let num4 = 5;
 let x = num4 % 5;
-console.log(num4);
 if (x === 0) {
   console.log("Il numero è divisibile per 5")
 };
@@ -41,12 +39,12 @@ console.log("*******************");
 */
 console.log("ESERCIZIO 4");
 let num5 = 4;
-let num6 = 4;
-console.log(num5);
-console.log(num6);
-if (num5 === 8 || num6 === 8 || num5 + num6 === 8 || num5 - num6 === 8) {
+let num6 = 5;
+if (num5 === 8 || num6 === 8 || (num5+num6) === 8 || (num5-num6) === 8 || (num6-num5) === 8) {
   console.log("Uno dei due valori corrisponde a 8 oppure la loro addizione/sottrazione corrisponde a 8")
-}
+} else {
+  console.log("Nessuno dei due numeri è pari a 8 nè la loro addizione o sottrazione è pari a 8")
+};
 console.log("*******************");
 
 /* ESERCIZIO 5
@@ -55,17 +53,16 @@ console.log("*******************");
   Crea un algoritmo che determini l'ammontare totale che deve essere addebitato all'utente per il checkout.
 */
 console.log("ESERCIZIO 5");
-let totalShoppingCart = 30;
-let speditionCost = 10;
+let totalShoppingCart = 10;
+const speditionCost = 10;
 if (totalShoppingCart < 50) {
   totalShoppingCart += speditionCost;
-  console.log("L'ammontare finale del checkout sarà:");
-  console.log(totalShoppingCart)
+  console.log("L'ammontare finale del checkout sarà: " + totalShoppingCart);
+  console.log("Nel checkout finale sono state incluse le spese di spedizione");
 } else {
-  console.log("L'ammontare finale del checkout sarà:");
-  console.log(totalShoppingCart);
-  console.log("La spedizione è gratutita")
-}
+  console.log("L'ammontare finale del checkout sarà: " + totalShoppingCart);
+  console.log("Non sono state incluse spese di spedizione")
+};
 console.log("*******************");
 
 /* ESERCIZIO 6
@@ -73,19 +70,19 @@ console.log("*******************");
   Modifica la risposta precedente includendo questa nuova promozione nell'algoritmo, determinando come prima se le spedizioni sono gratuite oppure no e e calcolando il totale.
 */
 console.log("ESERCIZIO 6");
+let totalShoppingCart2 = 40;
 let discount = 0.8;
-let totalShoppingCart2 = 30 * discount;
-let speditionCost2 = 10;
-console.log(totalShoppingCart2)
+const speditionCost2 = 10;
 if (totalShoppingCart2 < 50) {
+  totalShoppingCart2 *= discount;
   totalShoppingCart2 += speditionCost2;
-  console.log("L'ammontare finale del checkout sarà:");
-  console.log(totalShoppingCart2)
+  console.log("L'ammontare finale del checkout sarà: " + totalShoppingCart2);
+  console.log("Nel checkout finale sono state incluse le spese di spedizione");
 } else {
-  console.log("L'ammontare finale del checkout sarà:");
-  console.log(totalShoppingCart2);
-  console.log("La spedizione è gratutita")
-}
+  totalShoppingCart2 *= discount;
+  console.log("L'ammontare finale del checkout sarà: " + totalShoppingCart2);
+  console.log("Non sono state incluse spese di spedizione")
+};
 console.log("*******************");
 
 /* ESERCIZIO 7
@@ -94,12 +91,29 @@ console.log("*******************");
   Alla fine mostra il risultato in console.
 */
 console.log("ESERCIZIO 7");
-const numeri = [34, 18, 15];
-console.log("Questo è il mio array:")
-console.log(numeri);
-if (numeri.sort()) {
-  console.log("Questo è il mio array ordinato:")
-  console.log(numeri)
+let y = 10;
+let z = 15;
+let b = 20;
+if(z >= y) {
+  if(b >= z) {
+    console.log(b, z, y)
+  } else {
+    if(b >= z) {
+      console.log(y,b,z)
+    } else {
+      console.log(y, z, b)
+    }
+  }
+} else {
+  if(b >= z) {
+    console.log(b, z, y)
+  } else {
+    if(b >= y) {
+      console.log(z, b, y)
+    } else {
+      console.log(z, y, b)
+    }
+  }
 }
 console.log("*******************");
 
