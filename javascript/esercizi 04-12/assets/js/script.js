@@ -171,12 +171,11 @@ console.log(eyeColor);
 */
 console.log("ESERCIZIO 6");
 let crewMass = 0;
-for (i = 0; i < starWarsCharacters.length; i++) {
-    while (starWarsCharacters[i].mass !== 0) {
-        crewMass = crewMass + starWarsCharacters[i].mass;
-        break;
+let a = 0;
+    while (a < starWarsCharacters.length) {
+        crewMass = crewMass + starWarsCharacters[a].mass;
+        a++;
     }
-};
 console.log(crewMass);
 
 /* ESERCIZIO 7
