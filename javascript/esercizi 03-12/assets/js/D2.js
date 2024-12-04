@@ -128,7 +128,7 @@ if(typeof valore === "number") {
   console.log("Ho un stringa")
 } else if(typeof valore === "boolean") {
   console.log("Ho un valore booleano")
-}
+};
 console.log("*******************");
 
 /* ESERCIZIO 9
@@ -157,16 +157,14 @@ console.log("*******************");
     }     
 */
 console.log("ESERCIZIO 10");
-let val = 7;
-if (val < 10) {
-  console.log("Meno di 10");
-}
-if (val < 8) {
-  console.log("Meno di 8");
-}
-if(val >= 7) {
-  console.log("Uguale a 7 o maggiore");
-};
+let val = 7
+  if (val < 5) {
+      console.log("Meno di 5");
+    } else if (val < 10) {
+      console.log("Meno di 10");
+    } else {
+      console.log("Uguale a 10 o maggiore");
+    }     
 console.log("*******************");
 /* ESERCIZIO 11
   Fornito il seguente oggetto, scrivi del codice per aggiungere una proprietà "city", il cui valore sarà "Toronto".
@@ -221,8 +219,17 @@ console.log("*******************");
   Scrivi del codice per creare un array inizialmente vuoto. Riempilo successivamente con i numeri da 1 a 10.
 */
 console.log("ESERCIZIO 14");
-numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-console.log("Questo è il mio array di numeri:");
+const numbers = [];
+numbers.push(1);
+numbers.push(2);
+numbers.push(3);
+numbers.push(4);
+numbers.push(5);
+numbers.push(6);
+numbers.push(7);
+numbers.push(8);
+numbers.push(9);
+numbers.push(10);
 console.log(numbers);
 console.log("*******************");
 
@@ -230,9 +237,6 @@ console.log("*******************");
   Scrivi del codice per sostituire l'ultimo elemento dell'array, ovvero il valore 10, con il valore 100.
 */
 console.log("ESERCIZIO 15");
-numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-console.log("Questo è il mio array di numeri iniziale:");
-console.log(numbers);
 numbers.splice(9, 1, 100);
 console.log("Questo è il mio array di numeri finale:");
 console.log(numbers);
