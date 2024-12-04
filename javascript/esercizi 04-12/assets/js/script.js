@@ -157,7 +157,6 @@ for (i = 0; i < starWarsCharacters.length; i++) {
             blue_gray.push(starWarsCharacters[i]);
     }
 }
-console.log(blue);
 
 /* ESERCIZIO 6
   Usa un while loop per calcolare la massa totale dell'equipaggio. Salvala in una variabile chiamata "crewMass".
