@@ -130,7 +130,8 @@ console.log(string6);
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
  della stringa originale.
 */
-console.log("ESERCIZIO 9");
+
+/*console.log("ESERCIZIO 9");
 string7 = "Ciao a tutti";
 function cutString(string7) {
     let slice = string7.slice(1,);
@@ -143,11 +144,11 @@ console.log(resultString);
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
 console.log("ESERCIZIO 10");
-arr = [];
+arr1 = [];
 function giveMeRandom(num3) {
     for (let i = 0; i <= num3; i++) {
         Math.floor(Math.random() * 11);
-        arr.push(Math.floor(Math.random() * 11));
+        arr1.push(Math.floor(Math.random() * 11));
     }
     return arr1;
 }
