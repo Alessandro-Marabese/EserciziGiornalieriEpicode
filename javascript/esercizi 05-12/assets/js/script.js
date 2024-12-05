@@ -35,10 +35,10 @@ function crazyDiff(x) {
         return Math.abs(x - 19);
     } else if (x > 19) {
         (x - 19) * 3;
-        return Math.abs(x - 19) * 3;
+        return (x - 19) * 3;
     } else { return "Errore, i due numeri sono uguali" }
 };
-const result3 = crazyDiff(8, 19);
+const result3 = crazyDiff(8);
 console.log("Il risultato è: " + result3);
 
 /* ESERCIZIO 4
@@ -49,7 +49,7 @@ console.log("ESERCIZIO 4");
 function boundary(n) {
     if (n === 400) {
         return "true";
-    } else if ((n > 20) && (n < 100) && (n === 100)) {
+    } else if ((n >= 20) && (n < 100) && (n === 100)) {
         return "true";
     } else {
         return "false";
@@ -64,13 +64,11 @@ console.log("Il valore restituito è: " + result4);
  ritornare la stringa originale senza alterarla.
 */
 console.log("ESERCIZIO 5");
-function epify(string) {
-    let slice1 = string.slice(1, 7);
-    if (slice1 !== "EPICODE") {
-        return "EPICODE" + " " + string;
-    } else if (slice1 === "EPICODE") {
-        return string;
+function epify(str) {
+    if (str.startsWith("EPICODE")) {
+        return str;
     }
+    return "EPICODE " + str;
 }
 const string2 = epify("EPICODE");
 console.log("La frase finale è: " + string2);
@@ -81,12 +79,10 @@ console.log("La frase finale è: " + string2);
 */
 console.log("ESERCIZIO 6");
 function check3and7(z) {
-    if (z % 3 === 0) {
+    if (z > 0 && (z % 3 === 0)) {
         return "Il valore " + z + " è multiplo di 3"
-    } else if (z % 7 === 0) {
+    } else if (z > 0 && (z % 7 === 0)) {
         return "Il valore " + z + " è multiplo di 7"
-    } else if ((z % 3 === 0) && (z % 7 === 0)) {
-        return "Il valore " + z + "  è multiplo sia di 3 che di 7"
     } else {
         return "Il valore " + z + " non è multiplo nè di 3 nè di 7"
     }
@@ -97,19 +93,17 @@ console.log(result6);
 /* ESERCIZIO 7
  Scrivi una funzione di nome "reverseString", il cui scopo è invertire una stringa fornita come parametro (es. "EPICODE" --> "EDOCIPE")
 */
-
-/* SCRIVI QUI LA TUA RISPOSTA */
-/*console.log("ESERCIZIO 7");
-const string3 = "epicode";
-function reverseString(string3) {
-    str = string3.length
-    for (let i = str - 1; i >= 0; i--) {
-        string4 += string3[i];         
+console.log("ESERCIZIO 7");
+function reverseString(str) {
+    let arrstr = str.split("");
+    let strReverse = "";
+    for (let i = arrstr.length; i > 0; i--) {
+        strReverse +=arrstr[i - 1];
     }
-    return string4
-}
-const string4 = reverseString();
-console.log(string4);
+    return strReverse;
+};
+const str2 = reverseString("EPICODE");
+console.log(str2);
 
 /* ESERCIZIO 8
  Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
@@ -117,13 +111,20 @@ console.log(string4);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-/*console.log("ESERCIZIO 8");
-let string5 = "ciao a tutti"
-function upperFirst(string5) {
-    string6 = string5.
-    return string6    
+console.log("ESERCIZIO 8");
+function upperFirst(str) {
+    let arrstr = str.split(" ");
+    let stringaCompleta = [];
+    for (let i = 0; i < arrstr.length; i++) {
+        let parola = arrstr[i];
+        let firstLetter = parola.charAt(0).toUpperCase();
+        let parolaSenzaLaPrimaLettera = parola.slice(1);
+        let parolaFinale = firstLetter + parolaSenzaLaPrimaLettera
+        stringaCompleta.push(parolaFinale);
+    }
+    return stringaCompleta.join(" ")    
 } 
-const string6 = upperFirst();
+const string6 = upperFirst("epicode il blog dei developer");
 console.log(string6);
 /* ESERCIZIO 9
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
@@ -145,10 +146,10 @@ console.log("ESERCIZIO 10");
 arr = [];
 function giveMeRandom(num3) {
     for (let i = 0; i <= num3; i++) {
-        Math.floor(Math.random()*11);
-        arr.push(Math.floor(Math.random()*11));        
-    }    
-    return arr;
+        Math.floor(Math.random() * 11);
+        arr.push(Math.floor(Math.random() * 11));
+    }
+    return arr1;
 }
 const result10 = giveMeRandom(8);
 console.log(result10);
