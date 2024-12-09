@@ -5,7 +5,7 @@
 console.log("ESERCIZIO 1");
 function strFunc(x, y) {
     let str1 = x.slice(0, 2);
-    let str2 = y.substring(6);
+    let str2 = y.slice(-3);
     let str3 = str1 + str2;
     return str3.toUpperCase();
 }
@@ -16,15 +16,15 @@ console.log(strResult);
   Scrivi una funzione che torni un array di 10 elementi; ognuno di essi deve essere un valore random compreso tra 0 e 100 (incluso).
 */
 console.log("ESERCIZIO 2");
-let arrNum = [];
-function randomNum() {
-    for (i = 0; i < 10; i++) {
+function randomNum(n) {
+    let arrNum = [];
+    for (i = 0; i < n; i++) {
         let random = (Math.floor(Math.random() * 101));
         arrNum.push(random);
     }
     return arrNum;
 }
-arrNum = randomNum();
+arrNum = randomNum(10);
 console.log(arrNum);
 
 /* ESERCIZIO 3 (filter)
@@ -40,9 +40,12 @@ console.log(evenNumbers);
 */
 console.log("ESERCIZIO 4");
 const arrNum2 = [2, 5, 17, 3, 75, 43, 50, 6, 18];
-let a = 0;
-const sum = arrNum2.forEach(element => element + a);
-console.log(sum);
+const sum = (arrNum2) => {
+    let result = 0;
+    arrNum2.forEach(element => result += element);
+    return result;
+}
+console.log(sum(arrNum2));
 
 /* ESERCIZIO 5 (reduce)
   Scrivi una funzione per sommare i numeri contenuti in un array
@@ -66,21 +69,25 @@ console.log(newArray);
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
 */
 console.log("ESERCIZIO 7");
+function arrstrFunc(arr) {
+    return arr.map(ele => ele.length)
+};
+console.log(arrstrFunc(["Epicode", "is", "great"]));
 
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
 */
 console.log("ESERCIZIO 8");
-oddNumbers =[];
-function oddFunc() {
-    for(i = 1; i <100; i ++) {
-        if((i%2) !== 0) {
+oddNumbers = [];
+function oddFunc(n) {
+    for (i = 1; i < n; i++) {
+        if ((i % 2) !== 0) {
             oddNumbers.push(i);
         }
     }
     return oddNumbers;
 }
-oddNumbers = oddFunc();
+oddNumbers = oddFunc(100);
 console.log(oddNumbers);
 
 /* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
@@ -203,17 +210,29 @@ const movies = [
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
 */
 console.log("ESERCIZIO 9");
-
+function oldFilm() {
+    let film = {Year: 5000};
+    movies.forEach(film => {
+        if(Film.Year > film.Year) {
+            Film = film
+        }
+    })
+}
 /* ESERCIZIO 10
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */
 console.log("ESERCIZIO 10");
 
+function filmFunc() {
+    return movies.length;
+}
+let len = filmFunc();
+console.log(len);
 /* ESERCIZIO 11 (map)
   Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
 */
 console.log("ESERCIZIO 11");
-let titleList= [];
+let titleList = [];
 titleList = movies.map(movies => movies.Title)
 console.log(titleList)
 
