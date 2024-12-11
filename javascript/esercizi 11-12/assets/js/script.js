@@ -1,13 +1,17 @@
 let taskList = [];
+let addButton = document.querySelector("#addBtn");
 
 function addTask() {
     let taskInput = document.querySelector("header input");
-    let task = taskInput.value;    
+
+    let task = taskInput.value;
+
     taskList.push(task);
 
     resetForm(taskInput);
-    createTaskList();  
-        
+    createTaskList();
+
+    
 }
 
 function resetForm(node) {
@@ -31,6 +35,5 @@ function removeTask(i) {
     taskList.splice(i, 1);
     createTaskList();
 }
-document.querySelectorAll("ol li").addEventListener("click", function completedTask() {
-    taskList[i].style.textDecoration = "line-through"
-})
+
+
