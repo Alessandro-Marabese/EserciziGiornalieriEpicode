@@ -119,6 +119,7 @@
 
         const changeUrls = function () {
             let link = document.querySelectorAll("a:not(footer a)");
+            link.style.cursor = "pointer";
             link.forEach(ele => {
                 ele.href = "https://www.google.com";
             })
