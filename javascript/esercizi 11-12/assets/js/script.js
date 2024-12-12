@@ -1,5 +1,4 @@
 let taskList = [];
-let addButton = document.querySelector("#addBtn");
 
 function addTask() {
     let taskInput = document.querySelector("header input");
@@ -11,8 +10,8 @@ function addTask() {
     resetForm(taskInput);
     createTaskList();
 
-    
 }
+document.querySelector("button").addEventListener("click", addTask);
 
 function resetForm(node) {
     node.value = "";
@@ -25,7 +24,7 @@ function createTaskList() {
 
     taskList.forEach((ele, i) => {
         let li = document.createElement("li");
-        li.innerHTML = `${ele} <span><button onclick="removeTask(${i})">X</button></span>`;
+        li.innerHTML = `${ele} <span><button onclick="removeTask(${i})">Elimina</button></span>`;
         ol.appendChild(li);
     })
     nodeList.appendChild(ol);

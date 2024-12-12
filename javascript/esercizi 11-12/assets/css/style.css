@@ -46,8 +46,9 @@ ol li span {
 
 ol li span button {
     cursor: pointer;
-    border-radius: 20%;
+    border-radius: 10%;
     background-color:  rgba(241, 64, 64, 0.61);
     width: 2.5em;
     height: 2.5em;
+    width: 5em;
 }
